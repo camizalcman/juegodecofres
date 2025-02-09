@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego</title>
+    <link rel="stylesheet" href="./assets/css/estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/imgs/cofre-abierto.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">">
+
+</head>
+<body>
+    <header>
+        <div class="centerY df dfm centerXm w100m">
+            <h3 id="puntos"></h3><!-- Generado dinámicamente con js -->
+        </div>
+    </header>       
+    <main class="relative">
+        <aside class="botonera df columna absolute rowm w90m botoneram">
+            <button class="botonMenu jakarta columna centerX centerY botonMenum"><a href="index.html" class="colorBlanco w90m"><i class="fa-solid fa-house icono"></i>Inicio</a></button>
+            <button id="reiniciar" class="botonMenu colorBlanco jakarta columna centerX centerY botonMenum"><i class="fa-solid fa-arrows-rotate icono"></i>Reiniciar</button>
+            <button id="reglasJuego" class="botonMenu colorBlanco jakarta columna centerX centerY botonMenum"><i class="fa-solid fa-scroll icono"></i>Reglas</button>
+        </aside>
+
+        <dialog id="reglas" class="w60"></dialog><!-- Generado dinámicamente con js -->
+
+        <section id="contenedorCofres">
+            <!-- Generado dinámicamente con js -->
+        </section>
+        
+        <dialog id="modalPremio" class="modal"></dialog>
+        <dialog id="modalFin" class="modal"></dialog>
+    </main>
+    <footer></footer>
+    <script src="assets/js/juego.js"></script>
+</body>
+</html>

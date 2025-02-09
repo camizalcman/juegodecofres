@@ -1,0 +1,398 @@
+*{
+    text-decoration: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none; 
+    border: none;   
+}
+
+::selection {
+    background: #FFFFFF;
+    color: #0B0040;
+}
+
+.jakarta{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/*Clases útiles*/
+
+.df{
+    display: flex;
+}
+
+.centerX{
+    justify-content: center;
+}
+
+.centerY{
+    align-items: center;
+}
+
+.columna{
+    flex-direction: column;
+}
+
+.centerX, .centerY, .columna{
+    display: flex;
+}
+
+.textCenter{
+    text-align: center;
+}
+
+.absolute{
+    position: absolute;
+}
+
+.relative{
+    position: relative;
+}
+
+.colorBlanco{
+    color: white;
+}
+
+.colorNaranja{
+    color: #EBA000;
+}
+
+.padding1{
+    padding: 1em;
+}
+
+.padding2{
+    padding: 2em;
+}
+
+.paddingTop3{
+    padding-top: 3em;
+}
+
+.marginTop1{
+    margin-top: 1em;
+}
+
+.spaceb{
+    justify-content: space-between;
+}
+
+.bordeRojo{
+    border: 2px solid red;
+}
+
+.w100{
+    width: 100%;
+}
+
+.w50{
+    width: 50%;
+}
+
+.w30{
+    width: 30%;
+}
+
+.h100{
+    min-height: 100vh;
+}
+
+.h60{
+    min-height: 60vh;
+}
+
+.h30{
+    min-height: 30vh;
+}
+
+/*Fin clases útiles*/
+
+body{
+    background-color: #0B0040;
+}
+
+h1, h2{
+    font-family:"Plus Jakarta Sans", sans-serif;
+    font-size: 4em;
+}
+
+.formulario {
+    border: 2px solid  #EBA000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px white;
+    width: 40%;
+    padding: 2em;
+    margin-top: 3em;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid white;
+    background-color: transparent;
+    margin-top: 1em;
+    border-radius: 0.4em;
+    color: white;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.boton1, .boton2{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    width: 48%;
+    border-radius: 0.4em;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.boton1{
+    background-color: transparent;
+    border: 1px solid #EBA000;
+}
+
+.boton2{
+    background-color: #EBA000;
+}
+
+.modalReglasClases {
+    position: relative;
+    background-color: white;
+    width: 60%;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px white;
+}
+
+.claseCruz {
+    position: absolute;
+    top: 10px; 
+    right: 16px; 
+    cursor: pointer;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.cofres9{
+    width: 60%;
+    flex-wrap: wrap;
+    position: relative;
+    height: 80vh;
+}
+
+.cofreContainer {
+    position: relative;
+    width: 26%; 
+    height: 30%; 
+    margin: 5px; 
+}
+
+.imgCofre{
+    width:76%;
+    height: auto;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: visibility 0.06s ease;
+}
+
+.cofreFoto{
+    width:20%;
+    bottom:2em;
+    right: 3em;
+}
+
+
+#reglas{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 3em;
+}
+
+.modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1em;
+}
+
+.puntosClase{
+    padding-top: 2em;
+    padding-left: 14em;
+}
+
+.botonera{
+    width:10% ;
+    background-color: transparent;
+    padding-left: 1.6em;
+}
+
+.botonMenu{
+    background-color: #EBA000;
+    border-radius: 0.8em;
+    width: 4.5em;
+    margin-bottom: 2em;
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+}
+
+.icono{
+    font-size: 1.5em;
+    margin: 0.3em;
+}
+
+/*Animaciones*/
+
+@keyframes cerrar {
+    0% {
+        opacity: 1; 
+    }
+    30%{
+        opacity: 0; 
+    }
+    100%{
+        opacity: 0; 
+    }
+}
+
+@keyframes abrir {
+    0%{
+        opacity: 0;
+    }
+    30%{
+        opacity: 1; 
+    }
+    100%{
+        opacity: 1; 
+    }
+}
+.animacionC{
+    animation: cerrar 6s ease-in-out forwards;
+} 
+
+.animacionA{
+    animation: abrir 6s ease-in-out forwards;
+}
+
+
+/*Media Query tablet*/
+@media (max-width: 1024px)  {
+    .w60t{
+        width: 60%;
+    }
+
+    .w80t{
+        width: 80%;
+    }
+
+    .w90t{
+        width: 90%;
+    }
+    
+    .cofreFotot{
+        width:25%;
+        bottom:0em;
+        right: 3em;
+    }
+
+    h1, h2{
+        font-size: 3.6em;
+    }
+
+    .cofreContainert{
+        width: 30%;
+        height: 20%;
+    }
+
+    .cofres9m{
+        height: 80vh;
+        margin-left: 3em;
+    }
+}
+
+/*Media Query mobile*/
+@media (max-width: 480px) {
+    .w80m{
+        width: 80%;
+    }
+
+    .w90m{
+        width: 90%;
+    }
+
+    .w100m{
+        width: 100%;
+    }
+
+    h1, h2{
+        font-size: 2.4em;
+    }
+
+    .cofreFotom{
+        width:70%;
+        top:4em
+    }
+
+
+    .rowm{
+        flex-direction: row;
+    }
+
+    .botonMenum{
+        width: 18%;
+        aspect-ratio: 1 / 1;
+        cursor: pointer;
+        flex-direction: column;
+    }
+
+    .botoneram{
+        gap: 1em;
+        justify-content: center;
+    }
+
+    .marginTop5m{
+        margin-top: 5em;
+    }
+
+    .dfm{
+        display: flex;
+    }
+    
+    .centerXm{
+        justify-content: center;
+    }
+
+    .cofreContainerm{
+        width: 30%;
+        height: 20%;
+    }
+
+    .cofres9m{
+        height: 70vh;
+    }
+
+    .puntosClasem{
+        padding-bottom: 1em;
+    }
+
+    #puntos{
+        text-align: center;
+        width: 100%;
+        left: 40%;
+        transform: translate(-40%);
+    }
+
+    .textCenterm{
+        text-align: center;
+    }
+}
