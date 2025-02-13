@@ -149,6 +149,15 @@ input[type="text"] {
     font-family: "Plus Jakarta Sans", sans-serif;
 }
 
+.claseInput{
+    border: 1px solid black !important;
+}
+
+#cambiarModo{
+    top:40px;
+    right:40px
+}
+
 .boton1, .boton2{
     font-family: "Plus Jakarta Sans", sans-serif;
     width: 48%;
@@ -326,6 +335,19 @@ dialog::backdrop {
         height: 80vh;
         margin-left: 3em;
     }
+
+    .marginTopt{
+        margin-top: 0.5em;
+    }
+
+    .cambiart{
+        display: inline;
+        position: static;
+        width: 30%;
+        height: 3em;
+        border-radius: 24px;
+        margin-top: 1em;
+    }
 }
 
 /*Media Query mobile*/
@@ -369,6 +391,10 @@ dialog::backdrop {
         align-items: center
     }
 
+    .marginTopm{
+        margin-top: 0.5em;
+    }
+
     .marginTop5m{
         margin-top: 5em;
     }
@@ -403,5 +429,14 @@ dialog::backdrop {
 
     .textCenterm{
         text-align: center;
+    }
+
+    .cambiarm{
+        display: inline;
+        position: static;
+        width: 45%;
+        height: 3em;
+        border-radius: 24px;
+        margin-top: 1em;
     }
 }

@@ -67,3 +67,33 @@ function limpiarCampoNombre() {
 }
 
 window.addEventListener("load", limpiarCampoNombre);
+
+
+/*DARK MODE*/
+
+//me traigo las partes del sitio
+let cabeza = document.querySelector("header");
+let cuerpo = document.querySelector("body");
+let pie = document.querySelector("footer");
+let subtitulos = document.querySelectorAll("header h2");
+let label = document.querySelectorAll("form label");
+let input = document.getElementById("name");
+let botonCambio = document.getElementById("cambiarModo");
+
+botonCambio.addEventListener("click", ()=>{
+
+    cuerpo.classList.toggle("fondoBeige");
+
+    cabeza.classList.toggle("fondoBeige");
+
+    subtitulos.forEach((subtitulos)=>{
+        subtitulos.classList.toggle("colorNegro");
+    });
+
+    label.forEach((label)=>{
+        label.classList.toggle("colorNegro");
+    });
+
+    input.classList.toggle("claseInput");
+
+});
