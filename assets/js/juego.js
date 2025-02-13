@@ -267,7 +267,7 @@ botonReglasJuego.addEventListener("click", mostrarReglas)
 let cabeza = document.querySelector("header");
 let cuerpo = document.querySelector("body");
 let pie = document.querySelector("footer");
-let subtitulos = document.querySelectorAll("header h3");
+let subtitulos = document.querySelector("header h3");
 let botonCambio = document.getElementById("cambiarModo");
 
 botonCambio.addEventListener("click", ()=>{
@@ -276,8 +276,6 @@ botonCambio.addEventListener("click", ()=>{
 
     cabeza.classList.toggle("fondoBeige");
 
-    subtitulos.forEach((subtitulos)=>{
-        subtitulos.classList.toggle("colorNegro");
-    });
+    subtitulos.classList.toggle("colorNegro");
 
 });

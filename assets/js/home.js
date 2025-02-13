@@ -75,8 +75,8 @@ window.addEventListener("load", limpiarCampoNombre);
 let cabeza = document.querySelector("header");
 let cuerpo = document.querySelector("body");
 let pie = document.querySelector("footer");
-let subtitulos = document.querySelectorAll("header h2");
-let label = document.querySelectorAll("form label");
+let subtitulos = document.querySelector("header h2");
+let label = document.querySelector("form label");
 let input = document.getElementById("name");
 let botonCambio = document.getElementById("cambiarModo");
 
@@ -86,13 +86,9 @@ botonCambio.addEventListener("click", ()=>{
 
     cabeza.classList.toggle("fondoBeige");
 
-    subtitulos.forEach((subtitulos)=>{
-        subtitulos.classList.toggle("colorNegro");
-    });
-
-    label.forEach((label)=>{
-        label.classList.toggle("colorNegro");
-    });
+    subtitulos.classList.toggle("colorNegro");
+   
+    label.classList.toggle("colorNegro");
 
     input.classList.toggle("claseInput");
 
