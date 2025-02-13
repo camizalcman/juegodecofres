@@ -259,3 +259,25 @@ function mostrarReglas(){
 }
 
 botonReglasJuego.addEventListener("click", mostrarReglas)
+
+
+/*DARK MODE*/
+
+//me traigo las partes del sitio
+let cabeza = document.querySelector("header");
+let cuerpo = document.querySelector("body");
+let pie = document.querySelector("footer");
+let subtitulos = document.querySelectorAll("header h3");
+let botonCambio = document.getElementById("cambiarModo");
+
+botonCambio.addEventListener("click", ()=>{
+
+    cuerpo.classList.toggle("fondoBeige");
+
+    cabeza.classList.toggle("fondoBeige");
+
+    subtitulos.forEach((subtitulos)=>{
+        subtitulos.classList.toggle("colorNegro");
+    });
+
+});
