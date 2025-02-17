@@ -217,7 +217,12 @@ dialog::backdrop {
     position: absolute;
     top: 0;
     left: 0;
-    transition: visibility 0.06s ease;
+    transition: visibility 0.06s ease; 
+    transition: transform 0.3s ease-in-out;
+}
+
+.imgCofre:hover{
+    transform: scale(1.2);
 }
 
 .cofreFoto{
@@ -268,6 +273,26 @@ dialog::backdrop {
     margin: 0.3em;
 }
 
+.cambiar{
+    display: inline;
+    position: static;
+    width: 30%;
+    height: 3em;
+    border-radius: 24px;
+    margin-top: 1em;
+}
+
+.botonTran{
+    transition: all 0.2s ease-in-out;
+}
+
+.botonTran:hover{
+    transform: scale(1.06);
+    box-shadow: 0px 0px 8px 4px rgba(255, 255, 255, 0.4);
+}
+
+
+
 /*Animaciones*/
 
 @keyframes cerrar {
@@ -299,6 +324,29 @@ dialog::backdrop {
 
 .animacionA{
     animation: abrir 6s ease-in-out forwards;
+}
+
+.pirata{
+    width: 20%;
+    bottom: 0;
+    right:0;
+
+    animation: aparece 5s ease-in-out 1s both
+}
+
+@keyframes aparece{
+    0%{
+        opacity:0;
+    }
+    25%{
+        opacity:1;
+    }
+    75%{
+        opacity:1;
+    }
+    100%{
+        opacity:0;
+    }
 }
 
 
@@ -340,14 +388,10 @@ dialog::backdrop {
         margin-top: 0.5em;
     }
 
-    .cambiart{
-        display: inline;
-        position: static;
-        width: 30%;
-        height: 3em;
-        border-radius: 24px;
-        margin-top: 1em;
+    .pirata{
+        display: none;
     }
+
 }
 
 /*Media Query mobile*/
@@ -431,12 +475,8 @@ dialog::backdrop {
         text-align: center;
     }
 
-    .cambiarm{
-        display: inline;
-        position: static;
-        width: 45%;
-        height: 3em;
-        border-radius: 24px;
-        margin-top: 1em;
+    .pirata{
+        display: none;
     }
+
 }

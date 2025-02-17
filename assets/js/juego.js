@@ -14,7 +14,7 @@ function mostrarCofres(){
 
     let cofres9=document.createElement("div");
     cofres9.classList.add("cofres9", "centerX", "centerY", "spaceb", "w90m", "marginTop5m" , "cofres9m", "w80t", "cofres9t")
-
+ 
     //creo un for para crear los 9 cofres
     for(let i=0; i<9; i++){
 
