@@ -452,7 +452,7 @@ dialog::backdrop {
     }
 
     .botonMenum{
-        width: 18%;
+        width: 16%;
         aspect-ratio: 1 / 1;
         cursor: pointer;
         flex-direction: column;
