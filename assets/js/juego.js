@@ -260,6 +260,28 @@ function mostrarReglas(){
 
 botonReglasJuego.addEventListener("click", mostrarReglas)
 
+/*BOTÓN DE MÚSICA*/
+const musicButton = document.getElementById("botonAudio");
+const music = document.getElementById("audio"); 
+const icono = document.getElementById("iconoAudio");
+
+//Función para alternar el audio
+function toggleMusic() {
+    if (music.paused) {
+        music.play(); 
+        icono.classList.remove("fa-volume-xmark");
+        icono.classList.add("fa-volume-high");
+
+    } else {
+        music.pause(); 
+        icono.classList.remove("fa-volume-high");
+        icono.classList.add("fa-volume-xmark");
+        
+    }
+}
+
+// Agregar un event listener al botón para cambiar el estado del audio
+musicButton.addEventListener("click", toggleMusic);
 
 /*DARK MODE*/
 

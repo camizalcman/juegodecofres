@@ -93,7 +93,13 @@ header, main, footer {
 }
 
 .bordeRojo{
-    border: 2px solid red;
+    border: 2px solid red !important;
+}
+
+.rojo{
+    margin-top: 0.4em;
+    font-size: 1em;
+    color: red;
 }
 
 .w100{

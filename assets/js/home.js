@@ -45,20 +45,44 @@ function mostrarReglas(){
 //le asigno el evento al boton mostrar reglas
 botonReglas.addEventListener("click", mostrarReglas)
 
-//funcion para guardar el valor ingresado en el formulario y para redirigir a la siguiente pagina
-function envioFormulario(event) {
-    event.preventDefault(); // Prevenir el envío del formulario
 
-    const nombre = document.getElementById("name").value; // Obtener el nombre ingresado
-    
-    localStorage.setItem("nombre", nombre); // Guardar el nombre en localStorage
+//funcion para validar el formulario, guardar su contenido y redirigir de página
 
-    window.location.href = "juego.html"; // Redirigir a la siguiente página
+let campoNombre = document.getElementById("name");
+let campoError = document.getElementById("error");
+let validez;
+
+function envioFormulario(event){
+
+    event.preventDefault();
+
+    campoError.innerHTML = "";
+
+        //verifico que sea un nombre real
+        if (campoNombre.value.length < 3) {
+            campoNombre.classList.add("bordeRojo")
+            campoError.innerHTML += "El nombre debe contener al menos 3 caracteres. "
+            validez=false
+            console.log("Clase bordeRojo agregada");
+
+        } else {
+            campoNombre.classList.remove("bordeRojo");
+            validez=true
+        }
+
+        //solo se ejecuta si el nombre es valido
+        if(validez===true){
+            const nombre = document.getElementById("name").value; // Obtener el nombre ingresado
+            localStorage.setItem("nombre", nombre); // Guardar el nombre en localStorage
+            window.location.href = "juego.html"; // Redirigir a la siguiente página
+        }
 }
 
+
 //le asigno el evento al formulario
-const form = document.getElementById("formulario");
-form.addEventListener("submit", envioFormulario);
+const botonComenzar = document.getElementById("comenzarJuego");
+botonComenzar.addEventListener("click", envioFormulario);
+
 
 
 //creo una fucnion para eliminar el valor ingresado en el formulario en el caso de que el usuario recargue la pagina
@@ -93,3 +117,4 @@ botonCambio.addEventListener("click", ()=>{
     input.classList.toggle("claseInput");
 
 });
+
