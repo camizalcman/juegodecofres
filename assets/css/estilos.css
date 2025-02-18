@@ -459,7 +459,7 @@ dialog::backdrop {
     }
 
     .botoneram{
-        gap: 1em;
+        gap: 0.5em;
         justify-content: center;
         align-items: center
     }
