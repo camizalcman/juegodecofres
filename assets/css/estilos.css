@@ -19,14 +19,13 @@ header, main, footer {
     color: #0B0040;
 }
 
+/*Clases útiles*/
 .jakarta{
     font-family: "Plus Jakarta Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
 }
-
-/*Clases útiles*/
 
 .df{
     display: flex;
@@ -129,6 +128,7 @@ header, main, footer {
 .fondoBeige{
     background-color:#f9f4c3;
 }
+
 
 /*Fin clases útiles*/
 

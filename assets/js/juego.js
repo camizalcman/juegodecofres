@@ -12,23 +12,25 @@ function mostrarCofres(){
 
     console.log("Funcion mostrar cofres fue llamada")
 
+    //contenedor de los 9 cofres
     let cofres9=document.createElement("div");
     cofres9.classList.add("cofres9", "centerX", "centerY", "spaceb", "w90m", "marginTop5m" , "cofres9m", "w80t", "cofres9t")
  
     //creo un for para crear los 9 cofres
     for(let i=0; i<9; i++){
 
+        //contenedor de cada cofre
         let cofreContainer = document.createElement("div");
         cofreContainer.classList.add("cofreContainer", "centerX", "centerY" , "spaceb", "dfm", "centerXm",  "cofreContainert","cofreContainerm");
 
-        //agrego 9 cofres cerrados
+        //agrego el cofre cerrado
         let imgCofre=document.createElement("img");
         imgCofre.setAttribute("src", "./assets/imgs/cofre-cerrado.png");
         imgCofre.setAttribute("alt", "Cofre");
         imgCofre.classList.add("imgCofre", "w80m")
         cofreContainer.appendChild(imgCofre);
         
-        //agrego 9 cofres abiertos, arriba de los cerrados pero sin visibilidad
+        //agrego el cofre abierto, arriba del cerrado pero sin visibilidad
         let imgCofreAbierto = document.createElement("img");
         imgCofreAbierto.setAttribute("src", "./assets/imgs/cofre-abierto.png");
         imgCofreAbierto.setAttribute("alt", "Cofre abierto");
@@ -36,23 +38,29 @@ function mostrarCofres(){
         imgCofreAbierto.style.visibility = "hidden";
         cofreContainer.appendChild(imgCofreAbierto);
 
-        //selecciono un índice random del array y luego lo elimino para no usar dos veces el mismo valor
+        //selecciono un índice random del array 
         let indiceRandom=Math.floor(Math.random()*valoresCofres.length);
+
+        //ese valor se lo asigno como atributo al cofre
         imgCofreAbierto.setAttribute("valor", valoresCofres[indiceRandom]);
+
+        //lo borro del array para no tomar dos veces el mismo valor
         valoresCofres.splice(indiceRandom,1)
 
-        //corroboro en consola los valores que fueron asignados 
+        //guardo el valor en una variable
         let valorAsignado=parseInt(imgCofreAbierto.getAttribute("valor"))
+        
+        //corroboro en consola el valor asignado 
         console.log("Cofre"+ [i]+":"+ valorAsignado)
 
 
         //creo la función para abrir los cofres, solo si se abrieron menos de 4
         function abrirCofre(){
             if(cofresAbiertos<4){
-                imgCofre.style.visibility = "hidden";
-                imgCofreAbierto.style.visibility = "visible";
-                cofresAbiertos++
-                console.log(cofresAbiertos)
+                imgCofre.style.visibility = "hidden"; //oculto el cofre cerrado
+                imgCofreAbierto.style.visibility = "visible"; //muestro el cofre abierto
+                cofresAbiertos++ //sumo un cofre abierto
+                console.log("cofres abiertos: " + cofresAbiertos)
 
                 //llamo a la funcion ver premio
                 verPremio(valorAsignado);
@@ -66,6 +74,7 @@ function mostrarCofres(){
             } 
         }
 
+        //le asigno el evento al cofre
         imgCofre.addEventListener("click", abrirCofre);    
 
         cofres9.appendChild(cofreContainer);
@@ -79,18 +88,21 @@ function mostrarCofres(){
 document.addEventListener("DOMContentLoaded", mostrarCofres)
 
 
-//creo una función para mostrar el contenido del cofre
+//Función para mostrar el contenido del cofre
 function verPremio(valorCofre){
 
+    //creo el modal
     let modalPremio=document.getElementById("modalPremio");
     modalPremio.classList.add("jakarta", "w30", "w80m", "w60t");
     modalPremio.style.backgroundColor = "white";
     modalPremio.style.boxShadow="0 0 10px white";
     modalPremio.style.borderRadius="0.4em";
 
+    //div contenedor del mensaje
     let divContenedor=document.createElement("div");
     divContenedor.classList.add("w100", "centerX", "centerY", "columna", "padding2");
 
+    //mensaje
     let mensaje=document.createElement("h3");
     
     //genero un mensaje distinto según el valor del contenido del cofre
@@ -106,6 +118,7 @@ function verPremio(valorCofre){
     
     divContenedor.appendChild(mensaje);
 
+    //texto
     let texto=document.createElement("p");
     texto.innerText="Dentro del cofre hay:";
     texto.classList.add("marginTop1")
@@ -116,6 +129,7 @@ function verPremio(valorCofre){
     tituloPremio.innerText=valorCofre;
     divContenedor.appendChild(tituloPremio);
 
+    //boton aceptar
     let botonAceptar=document.createElement("button");
     botonAceptar.innerText="ACEPTAR";
     botonAceptar.style.backgroundColor = "#EBA000";
@@ -158,13 +172,13 @@ function mostrarPuntos(puntosActuales){
 mostrarPuntos(puntosTotales)
 
 
-
-
 const botonReiniciar=document.getElementById("reiniciar"); //me traigo el botón reiniciar
 
 //creo una funcion para reiniciar la partida
 function reiniciarPartida(){
     cajaCofres.innerHTML = ""; 
+
+    //reinicio los valores
     cofresAbiertos = 0; 
     puntosTotales = 0; 
     valoresCofres = [20, 20, 20, -15, -15, -15, 0, 0, 0]; //Vuelvo a poner los posibles valores en el array
@@ -176,17 +190,22 @@ function reiniciarPartida(){
 //le asigno el evento al boton
 botonReiniciar.addEventListener("click", reiniciarPartida)
 
+
 //funcion para definir el resultado de la partida
 function definicionPartida(){
+
+    //modal
     let modalFinal=document.getElementById("modalFin");
     modalFinal.classList.add("jakarta", "w30","w80m", "w60t", "textCenterm");
     modalFinal.style.backgroundColor = "white";
     modalFinal.style.boxShadow="0 0 10px white";
     modalFinal.style.borderRadius="0.4em";
 
+    //contenedor del texto
     let divContenedorFinal=document.createElement("div");
     divContenedorFinal.classList.add("w100", "centerX", "centerY", "columna", "padding2");
 
+    //defino el mensaje según el resultado
     let mensajeFinal=document.createElement("h3");
     
     if(puntosTotales>=40){
@@ -197,7 +216,7 @@ function definicionPartida(){
     
     divContenedorFinal.appendChild(mensajeFinal);
 
-
+    //boton aceptar
     let botonAceptarFinal=document.createElement("button");
     botonAceptarFinal.innerText="ACEPTAR";
     botonAceptarFinal.style.backgroundColor = "#EBA000";
@@ -208,7 +227,6 @@ function definicionPartida(){
 
     modalFinal.appendChild(divContenedorFinal);
     modalFinal.showModal()
-    console.log("Abierto")
 
     function cerrarPremioFinal(){
         console.log("hideModal llamado")

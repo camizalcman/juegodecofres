@@ -8,7 +8,7 @@ function mostrarReglas(){
     modal.innerHTML = "";//Limpio el contenido del modal para que no se encime
     modal.classList.add("modalReglasClases","padding1" ,"jakarta", "absolute", "w100m"); //Le agrego las clases
 
-    //div contenedor    
+    //creo el div contenedor    
     let divContenedor=document.createElement("div");
     
     //titulo
@@ -46,51 +46,53 @@ function mostrarReglas(){
 botonReglas.addEventListener("click", mostrarReglas)
 
 
-//funcion para validar el formulario, guardar su contenido y redirigir de página
 
+//Funcion para validar el formulario, guardar su contenido y redirigir de página
+//me traigo los campos name y error
 let campoNombre = document.getElementById("name");
 let campoError = document.getElementById("error");
-let validez;
+let validez; //creo una variable para comprobar su validez
 
 function envioFormulario(event){
 
-    event.preventDefault();
+    event.preventDefault(); //evitar que el formulario se envie automáticamente
 
-    campoError.innerHTML = "";
+    campoError.innerHTML = ""; //limpio el campo error por si tenía contenido anteriormente
 
         //verifico que sea un nombre real
         if (campoNombre.value.length < 3) {
             campoNombre.classList.add("bordeRojo")
             campoError.innerHTML += "El nombre debe contener al menos 3 caracteres. "
             validez=false
-            console.log("Clase bordeRojo agregada");
+            //le inserto un mensaje de error junto con el borde rojo y le asigno un false a la variable validez
 
         } else {
             campoNombre.classList.remove("bordeRojo");
             validez=true
+            //le saco el borde rojo y le asigno un true a la variable validez
         }
 
         //solo se ejecuta si el nombre es valido
         if(validez===true){
-            const nombre = document.getElementById("name").value; // Obtener el nombre ingresado
-            localStorage.setItem("nombre", nombre); // Guardar el nombre en localStorage
-            window.location.href = "juego.html"; // Redirigir a la siguiente página
+            const nombre = document.getElementById("name").value; //Obtengo el nombre ingresado
+            localStorage.setItem("nombre", nombre); //Guardo el nombre en localStorage
+            window.location.href = "juego.html"; //Redirijo a la siguiente página
         }
 }
 
-
-//le asigno el evento al formulario
+//le asigno el evento al boton 
 const botonComenzar = document.getElementById("comenzarJuego");
 botonComenzar.addEventListener("click", envioFormulario);
 
 
 
-//creo una fucnion para eliminar el valor ingresado en el formulario en el caso de que el usuario recargue la pagina
+//Funcion para eliminar el valor ingresado en el formulario en el caso de que el usuario recargue la pagina
 function limpiarCampoNombre() {
     document.getElementById("name").value = ""; //borra el campo
 }
 
 window.addEventListener("load", limpiarCampoNombre);
+
 
 
 /*DARK MODE*/
